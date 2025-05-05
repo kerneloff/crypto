@@ -1,0 +1,62 @@
+server:
+  port: 8080
+  read_timeout: 5s
+  write_timeout: 10s
+  idle_timeout: 120s
+
+database:
+  driver: postgres
+  host: localhost
+  port: 5432
+  user: postgres
+  password: postgres
+  dbname: crypto_exchange
+  sslmode: disable
+
+redis:
+  host: localhost
+  port: 6379
+  password: ""
+  db: 0
+
+jwt:
+  secret: ImHateYouIfYouHackMe1488
+  expiration: 24h
+
+websocket:
+  ping_interval: 30s
+  pong_wait: 60s
+  write_wait: 10s
+  max_message_size: 512
+
+markets:
+  - symbol: BTC/USDT
+    min_price: 0.01
+    max_price: 100000
+    min_quantity: 0.0001
+    max_quantity: 100
+    price_precision: 2
+    quantity_precision: 4
+  - symbol: ETH/USDT
+    min_price: 0.01
+    max_price: 10000
+    min_quantity: 0.001
+    max_quantity: 1000
+    price_precision: 2
+    quantity_precision: 4
+
+security:
+  rate_limit:
+    requests: 100
+    window: 1m
+  cors:
+    allowed_origins:
+      - http://localhost:3000
+    allowed_methods:
+      - GET
+      - POST
+      - PUT
+      - DELETE
+    allowed_headers:
+      - Content-Type
+      - Authorization 

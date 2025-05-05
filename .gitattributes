@@ -1,0 +1,5 @@
+*.node filter=lfs diff=lfs merge=lfs -text
+frontend/node_modules/@next/swc-*/** filter=lfs diff=lfs merge=lfs -text
+crypto-exchange/frontend/node_modules/@next/swc-*/** filter=lfs diff=lfs merge=lfs -text
+*.bin filter=lfs diff=lfs merge=lfs -text
+*.so filter=lfs diff=lfs merge=lfs -text
